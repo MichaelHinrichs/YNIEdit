@@ -11,7 +11,7 @@ class ObjParse:
     def ReadObj(self, filename):
 
         # Open the selected object file
-        o = open('./stage/object' + filename + '.csv', 'rt', encoding='shiftjis', errors='ignore')
+        o = open(f'./stage/object{filename}.csv', 'rt', encoding='shiftjis', errors='ignore')
         readObjects = csv.reader(o)
 
         # Open the object types file
@@ -93,7 +93,7 @@ class ColParse:
     def ReadCol(self, filename):
 
         # Open the selected file
-        c = open('./stage/cmap' + filename + '.csv', 'rt', encoding='shiftjis', errors='ignore')
+        c = open(f'./stage/cmap{filename}.csv', 'rt', encoding='shiftjis', errors='ignore')
         readCollision = csv.reader(c)
 
         # Create variables
@@ -159,7 +159,7 @@ class AreaParse:
 
     def ReadAreas(self, filename):
         # Open the selected area file
-        a = open('./stage/area' + filename + '.csv', 'rt', encoding='shiftjis', errors='ignore')
+        a = open(f'./stage/area{filename}.csv', 'rt', encoding='shiftjis', errors='ignore')
         readAreas = csv.reader(a)
 
         # Loop through each row of the area file
@@ -189,7 +189,7 @@ class PathParse:
     def ReadPath(self, filename):
 
         # Open selected path file
-        p = open('./stage/path' + filename + '.csv', 'rt', encoding='shiftjis', errors='ignore')
+        p = open(f'./stage/path{filename}.csv', 'rt', encoding='shiftjis', errors='ignore')
         readPaths = csv.reader(p)
 
         # define variables
@@ -249,7 +249,7 @@ class LoadLevelData:
         # Read Collision
 
         # Read a collision file if it exists
-        if os.path.isfile('./stage/cmap' + filename + '.csv'):
+        if os.path.isfile(f'./stage/cmap{filename}.csv'):
             # Setup Collision Reader
             c = ColParse()
             c.ReadCol(filename)
@@ -261,7 +261,7 @@ class LoadLevelData:
         # Read Objects
 
         # Read a objects file if it exists
-        if os.path.isfile('./stage/object' + filename + '.csv'):
+        if os.path.isfile(f'./stage/object{filename}.csv'):
             # Setup Object Reader
             o = ObjParse()
             o.ReadObj(filename)
@@ -273,7 +273,7 @@ class LoadLevelData:
         # Read Areas
 
         # Read a area file if it exists
-        if os.path.isfile('./stage/area' + filename + '.csv'):
+        if os.path.isfile(f'./stage/area{filename}.csv'):
             # Setup Area Reader
             a = AreaParse()
             a.ReadAreas(filename)
@@ -285,7 +285,7 @@ class LoadLevelData:
         # Read Paths
 
         # Read a path file if it exists
-        if os.path.isfile('./stage/path' + filename + '.csv'):
+        if os.path.isfile(f'./stage/path{filename}.csv'):
             # Setup Path Reader
             p = PathParse()
             p.ReadPath(filename)
