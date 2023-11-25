@@ -48,7 +48,7 @@ class CreateObjectItem(QtWidgets.QGraphicsItem):
         self.setSelected(True)
         QtWidgets.QGraphicsItem.mousePressEvent(self, event)
 
-        print("selected: " + self.name + " at: X:" + str(self.rect.x()) + " Y:" + str(self.rect.y()))
+        print(f"selected: {self.name} at: X:{str(self.rect.x())} Y:{str(self.rect.y())})
 
     def boundingRect(self):
         return self.rect
